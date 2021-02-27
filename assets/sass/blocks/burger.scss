@@ -1,0 +1,173 @@
+.burger {
+    width: 40px;
+    height: 30px;
+
+    display: none;
+
+    position: relative;
+    z-index: 999999;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 5px;
+
+        background: $colorSec2;
+
+        transition: all .3s ease;
+    }
+
+    &:before {
+        bottom: 0;
+    }
+
+    &.whited:after {
+        background: $color3;
+    }
+
+    &.whited:before {
+        background: $color3;
+    }
+
+    &.whited &__stick{
+        background: $color3;
+    }
+
+    &.switched:after {
+        background: $color3;
+        transform: rotate(45deg);
+        bottom: 11px;
+    }
+
+    &.switched:before {
+        background: $color3;
+        transform: rotate(-45deg);
+        bottom: 11px;
+    }
+
+    &.switched &__stick{
+        background: $color3;
+        transform: scale(0);
+    }
+
+    @include media(1468px) {
+        position: fixed;
+        top: 45.5px;
+        right: 20px;
+        display: block;
+    };
+
+    @include media(768px) {
+        top: 39.5px;
+    };
+
+    @include media(425px) {
+        width: 35px;
+        height: 25px;
+    }
+
+    @include media(400px) {
+        top: 37.5px;
+    }
+}
+
+.burger__stick {
+    position: absolute;
+    left: 0;
+    top: 12px;
+
+    width: 100%;
+    height: 5px;
+
+    background: $colorSec2;
+
+    transition: all .3s ease;
+
+    @include media(425px) {
+        top: 10px;
+    }
+}
+
+.bubble {
+    &.fullscreen {
+        @include media(1468px) {
+            transform: scale(544);
+        };
+
+        @include media(1024px) {
+            transform: scale(454);
+        };
+        
+        @include media(768px) {
+            transform: scale(404);
+        };
+
+        @include media(450px) {
+            transform: scale(334);
+        };
+
+        @include media(350px) {
+            transform: scale(304);
+        };
+    }
+
+    @include media(1468px) {
+        display: block;
+
+        position: fixed;
+        top: 58px;
+        right: 40px;
+        z-index: 9998;
+
+        width: 7px;
+        height: 7px;
+        
+        border-radius: 50%;
+        background: $colorSec2;
+
+        transition: all 1.2s ease-out;
+    };
+}
+
+.opacity-bubble {
+    width: 60px;
+    height: 55px;
+    border-radius: 50%;
+    background: $color3;
+    opacity: 0;
+
+    position: fixed;
+    top: 33.5px;
+    right: 10px;
+    z-index: 999998;
+
+    transition: all 0.3s ease;
+
+    &.active {
+        opacity: 0.7;
+    }
+
+    @media (min-width: 1469px) {
+        display: none;
+    }
+
+    @include media(768px) {
+        top: 28.5px;
+        right: 10.5px;
+    }
+
+    @include media(425px) {
+        width: 50px;
+        height: 45px;
+
+        top: 30.5px;
+        right: 13px;  
+    }
+
+    @include media(400px) {
+        top: 28.5px;
+    }
+}

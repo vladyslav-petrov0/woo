@@ -1,0 +1,26 @@
+.trusted {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+    
+    padding: 138px 0 322px 0;
+
+    background: linear-gradient(180deg, rgba(236, 240, 253, 0) 0%, rgba(236, 240, 253, 0.53) 14.32%,
+     #ECF0FD 45.83%, rgba(236, 240, 253, 0.43) 84.33%, rgba(236, 240, 253, 0) 100%);
+
+    @include media(550px) {
+        padding-bottom: 250px;
+    }
+
+    @include media(350px) {
+        padding: 138px 0 168px 0;        
+    }
+}
+
+.trusted__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

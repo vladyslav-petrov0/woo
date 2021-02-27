@@ -1,0 +1,50 @@
+// =============== VARS ===============
+
+$font1: 'Roboto';
+$font2: 'Montserrat';
+
+$color1: #272D4E;
+$color2: #94A2B3;
+$color3: #fff;
+
+$colorSec1: #299EF3; 
+$colorSec2: #7854F7; 
+$colorSec3: #5F37EF; 
+
+$borderRadius1: 20px;
+$borderRadius2: 60px;
+
+$boxShadow1: 0px 18px 52.8537px rgba(215, 228, 249, 0.5);
+
+
+// ============= MIXINS ===============
+
+@mixin noSelect {
+    user-select: none;
+    pointer-events: none;
+}
+
+// text
+
+@mixin text($param1, $param2, $param3) {
+    font-family: $param1;
+    font-style: $param2;
+    font-weight: $param3;
+}
+
+
+// anims
+
+@mixin animated($param) {
+    &.animated {
+        transform: $param; 
+        opacity: 1;
+    }
+}
+
+@mixin animTrans($param1, $param2, $param3) {
+    transition: all $param1 ease $param2;
+    transform: $param3; 
+    opacity: 0;
+}
+

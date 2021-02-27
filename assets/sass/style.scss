@@ -1,0 +1,33 @@
+// Import styles and mixins
+
+@import 'blocks/reset';
+@import 'blocks/vars';
+@import 'blocks/media';
+
+
+
+// Default styles
+
+body {
+    font-family: $font1;
+    overflow-x: hidden;
+}
+
+// Import blocks 
+
+@import 'blocks/upperpage';
+@import 'blocks/header';
+@import 'blocks/burger';
+@import 'blocks/search';
+@import 'blocks/intro';
+@import 'blocks/title';
+@import 'blocks/text';
+@import 'blocks/btn';
+@import 'blocks/collage';
+@import 'blocks/simple';
+@import 'blocks/develop';
+@import 'blocks/trusted';
+@import 'blocks/cards';
+@import 'blocks/supported';
+@import 'blocks/prefooter';
+@import 'blocks/footer';

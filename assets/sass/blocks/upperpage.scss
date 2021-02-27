@@ -1,0 +1,56 @@
+.upperpage {
+    position: relative;
+    min-height: 100vh;
+
+    background: linear-gradient(180deg, #E5EFFF 0%, rgba(229, 239, 255, 0.262661) 
+    83.7%, rgba(229, 239, 255, 0) 100%);
+
+    overflow: hidden;
+
+    &:before {
+        content: url('/assets/img/intro/bgsec.svg');
+        position: absolute;
+        top: -579px;
+        right: -844px;
+        z-index: 0;
+
+        width: 1767px;
+        height: 1666px;
+
+        @include media(1825px) {
+            right: -944px;
+        }
+
+        @include media(1725px) {
+            right: -1000px;
+        }
+
+        @include media(1625px) {
+            right: -1050px;
+        }
+
+        @include media(1569px) {
+            right: -1000px;
+        }
+
+        @include media(1280px) {
+            transform: scale(0.8);
+            top: -500px;
+        }
+
+        @include media(1024px) {
+            transform: scale(0.5);
+            top: -600px;
+            right: -800px;
+        }
+
+        @include media(768px) {
+            display: none;
+        }
+    }
+
+    @include media(1468px) {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,65 @@
+.collage {
+    @include noSelect;
+
+    width: 1028px;
+    height: 829px;
+
+    position: absolute;
+    top: -75px;
+    right: -175px;
+
+    @include animated(translateX(0%));
+    @include animTrans(1s, 0s, translateX(-20%));
+
+    @include media(1920px) {
+        right: -375px;
+    }
+
+    @include media(1720px) {
+        right: -475px;
+    }
+
+    @include media(1569px) {
+        display: none;
+    }
+}
+
+.collage__body {
+    position: relative;
+}
+
+.collage__item {
+    position: absolute;
+}
+
+.coll-item {
+    &--first, &--second {
+        box-shadow: $boxShadow1;
+        border-radius: $borderRadius1;
+        transition: all 0.1s linear;
+    }
+
+    &--big {
+        left: 0;
+        top: 0;
+
+        width: 1028px;
+        height: 829px;
+    }
+
+    &--first {
+        left: 48px;
+        top: 68px;
+    
+        width: 282px;
+        height: 195px;
+    }
+
+    &--second {
+        left: 228px;
+        bottom: -708px;
+
+        width: 406px;
+        height: 248px;
+    }
+}

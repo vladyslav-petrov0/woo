@@ -1,0 +1,215 @@
+.develop {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 99px;
+
+    background-color: $colorSec2 ;
+
+    //clip-path: ellipse(50% 3% at 50% 0%);
+    //clip-path: ellipse(50% 3% at 50% 100%);
+
+    &:before, &:after {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        content: '';
+
+        background: white;
+    }
+
+    &:before {
+        top: 0;
+
+        clip-path: ellipse(50% 3% at 50% 0%);
+        
+        @include noSelect;
+    }
+
+    &:after {
+        bottom: 0;
+        
+        //clip-path: ellipse(50% 2% at 50% 100%);
+        clip-path: ellipse(50% 3% at 50% 100%);
+
+        @include noSelect;
+    }
+
+    @include media(1023px) {
+        overflow-x: hidden;
+    }
+
+    @include media(450px) {
+        margin-bottom: 0;
+    }
+}
+
+.develop__body {
+    width: 100%;
+    max-width: 1229px;
+
+    &:first-child {
+        margin-bottom: 55px;
+    }
+
+    background: url('/assets/img/develop/pseudobg/1.svg') no-repeat, 
+    url('/assets/img/develop/pseudobg/2.svg') no-repeat, 
+    url('/assets/img/develop/pseudobg/3.svg') no-repeat;
+
+    background-size: 750px 329px, 421px 721px, 521px 451px;
+    background-position: top 69px right -279px, -128px 127px, bottom 144px right -185px;
+}
+
+.develop__section {
+    display: flex;
+
+    &:first-child {
+        margin-bottom: 55px;
+
+        @media (min-width: 1025px) and (max-width: 1268px) {
+            padding: 0 15px;
+        }
+
+        @include media(900px) {
+            margin-bottom: 100px;
+        }
+    }
+
+    &:nth-child(2) {
+        justify-content: flex-end;
+
+        @media (min-width: 1025px) and (max-width: 1268px) {
+            padding: 0 15px;
+        }       
+
+        @include media(1024px) {
+            justify-content: center;
+        }
+    }
+
+    @include media(1024px) {
+        justify-content: center;
+    }
+}
+
+.develop__text {
+    @include text($font1, normal, normal);
+    font-size: 18px;
+    line-height: 30px;
+
+    color: $color3;
+
+    margin-bottom: 39px;
+    max-width: 480px;
+
+    @include media(768px) {
+        margin-bottom: 27px;
+    }
+
+    @include media(550px) {
+        font-size: 17px;
+        line-height: 25px;
+
+        padding: 0 15px;
+    }
+
+    @include media(550px) {
+        font-size: 16px;
+    }
+}
+
+.develop__img {
+    @include noSelect;
+
+    position: relative;
+    z-index: 2228;
+
+    width: 430px;
+    height: 548px;
+
+    border-radius: $borderRadius1;
+    box-shadow: -25px 0px 44px rgba(81, 49, 194, 0.35);
+    transition: all 0.1s linear;
+
+    &:first-child {
+        margin: -41px 70px 0 0;
+
+        @include media(1024px) {
+            margin: -41px 50px 0 0;
+        }
+
+        @include media(1024px) {
+            margin: 100px 50px 0 0;
+        }
+    }
+
+    &:nth-child(2) {
+        margin: 0 0 0 69px;
+
+        @include media(1024px) {
+            margin: 0 0 0 50px;
+        }
+    }
+
+    @include media(1024px) {
+        width: auto;
+        height: 400px;
+    }
+
+    @include media(900px) {
+        display: none;
+    }
+}
+
+.develop__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 97px;
+
+    @include animTrans(1.5s, 0s, translateY(20%));
+    @include animated(translateY(0%));
+
+    &:nth-child(1) {
+        padding-top: 20px;
+        margin-bottom: 160px;
+
+        @include animTrans(1.5s, 0s, translateY(20%));
+        @include animated(translateY(0%));
+
+        @include media(1024px) {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        @include media(900px) {
+            align-items: center;
+            text-align: center;
+
+            margin-bottom: 110px;
+        }
+
+        @include media(768px) {
+            @include animTrans(1s, 0s, translateY(0%));
+        }
+    }
+
+    @include media(1024px) {
+        padding-top: 130px;
+    }
+
+    @include media(900px) {
+        padding-top: 100px;
+        
+        align-items: center;
+        text-align: center;
+    }
+
+    @include media(768px) {
+        @include animTrans(1s, 0s, translateY(0%));
+    }
+}

@@ -1,0 +1,86 @@
+.text {
+    @include text($font1, normal, normal);
+    font-size: 18px;
+    line-height: 25px;
+
+    color: $color2;
+}
+
+.text--intro {
+    max-width: 716px;
+    margin-bottom: 31px;
+
+    @include media(1024px) {
+        max-width: 600px;
+    }
+
+    @include media(768px) {
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+
+    @include media(550px) {
+        max-width: 400px;
+    }
+
+    @include media(450px) {
+        max-width: 350px;
+    }
+
+    @include media(350px) {
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 290px;
+    }
+}
+
+.text--simple {
+    margin: 5px 0 25px 0;
+
+    @include media(768px) {
+        margin: 5px 0 20px 0;
+    }
+
+    @include media(550px) {
+        margin: 5px 0 15px 0;
+    }
+
+    @include media(500px) {
+        padding: 0 20px;
+    }
+}
+
+.text--supported {
+    max-width: 660px;
+    margin-bottom: 16px;
+
+    text-align: center;
+    line-height: 25px;
+
+    @include animated(translateX(0%));
+    @include animTrans(1.5s, 0.2s, translateX(-20%));
+
+    @include media(768px) {
+        @include animTrans(1s, 0s, translateX(0%));
+    }
+
+    @include media(692px) {
+        max-width: 560px;
+    };
+
+    @include media(600px) {
+        max-width: 460px;
+    };
+
+    @include media(500px) {
+        max-width: 400px;
+    };
+
+    @include media(450px) {
+        max-width: 350px;
+    };
+
+    @include media(350px) {
+        max-width: 320px;
+    };
+}
