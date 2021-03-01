@@ -6,7 +6,7 @@
 
     margin-bottom: 99px;
 
-    background-color: $colorSec2 ;
+    background-color: $colorSec2;
 
     //clip-path: ellipse(50% 3% at 50% 0%);
     //clip-path: ellipse(50% 3% at 50% 100%);
@@ -54,20 +54,56 @@
     &:first-child {
         margin-bottom: 55px;
     }
-
-    background: url('/assets/img/develop/pseudobg/1.svg') no-repeat, 
-    url('/assets/img/develop/pseudobg/2.svg') no-repeat, 
-    url('/assets/img/develop/pseudobg/3.svg') no-repeat;
-
-    background-size: 750px 329px, 421px 721px, 521px 451px;
-    background-position: top 69px right -279px, -128px 127px, bottom 144px right -185px;
 }
 
 .develop__section {
     display: flex;
+    position: relative;
 
     &:first-child {
         margin-bottom: 55px;
+
+        &:before {
+            content: url('/assets/img/develop/pseudobg/1.svg');
+            position: absolute;
+            top: 69px;
+            right: -279px;
+
+            @include media(1269px) {
+                right: -179px;
+                transform: scale(0.6);
+            }
+
+            @include media(1024px) {
+                top: 20px;
+                right: -230px;
+            }
+
+            @include media(900px) {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: url('/assets/img/develop/pseudobg/2.svg');
+            position: absolute;
+            top: 127px;
+            left: -128px;
+
+            @include media(1269px) {
+                top: 30px;
+                left: -58px;
+                transform: scale(0.6);
+            }
+
+            @include media(1024px) {
+                top: -100px;
+            }
+
+            @include media(900px) {
+                display: none;
+            }
+        }
 
         @media (min-width: 1025px) and (max-width: 1268px) {
             padding: 0 15px;
@@ -80,6 +116,27 @@
 
     &:nth-child(2) {
         justify-content: flex-end;
+
+        &:before {
+            content: url('/assets/img/develop/pseudobg/3.svg');
+            position: absolute;
+            bottom: 144px;
+            right: -185px;
+
+            @include media(1269px) {
+                bottom: 300px;
+                transform: scale(0.6);
+            }
+
+            @include media(1024px) {
+               bottom: -70px;
+               right: -100px;
+            }
+
+            @include media(900px) {
+                display: none;
+            }
+        }
 
         @media (min-width: 1025px) and (max-width: 1268px) {
             padding: 0 15px;

@@ -4,6 +4,8 @@
 
     margin-bottom: 165px;
 
+    overflow-x: hidden;
+
     @include media(550px) {
         margin-bottom: 100px;
     }

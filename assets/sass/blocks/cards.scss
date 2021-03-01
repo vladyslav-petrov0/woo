@@ -1,5 +1,30 @@
 .cards {
     width: 730px;
+    position: relative;
+
+    &:before {
+        content: url('/assets/img/trusted/pseudobg/2.svg');
+        position: absolute;
+        top: 26px;
+        right: -127px;
+
+        @include media(1024px) {
+            display: none;
+        }
+    }
+
+    &:after {
+        content: url('/assets/img/trusted/pseudobg/1.svg');
+        position: absolute;
+        bottom: -82px;
+        left: -121px;
+
+        z-index: -1;
+
+        @include media(1024px) {
+            display: none;
+        }
+    }
 
     @include media(768px) {
         width: 650px;
