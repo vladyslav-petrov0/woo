@@ -1,7 +1,11 @@
 const wave = () => {
-    const btn = s('.btn--started');
-    let clicked = 0;
+    const btn = s('.btn--started'),
+        btnPurple = s('.btn--purple');
     
+    btnPurple.addEventListener('click', (e) => {
+        e.preventDefault();
+        makeBubble(e);
+    });
 
     btn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -9,14 +13,14 @@ const wave = () => {
     });
 
     function makeBubble(e) {
-        let wave = document.createElement('span');
+        const wave = document.createElement('span');
         wave.classList.add('wave');
-        btn.prepend(wave);
+        e.target.prepend(wave);
 
         wave.style.top = `${e.offsetY}px`;
         wave.style.left = `${e.offsetX}px`;
 
-        let btnPromise = new Promise((resolve, reject) => {
+        const btnPromise = new Promise((resolve, reject) => {
             wave.classList.add('wave--active');
 
             setTimeout(() => {

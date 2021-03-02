@@ -18,6 +18,7 @@ function sA(el) {
 //= components/wave.js
 //= components/fullscreen.js
 //= components/bubbleopacity.js
+//= components/accord.js
 
 // == MAIN CODE ==
 
@@ -28,4 +29,5 @@ search();
 wave();
 fullscreen();
 bubbleOpacity();
+accord();
     

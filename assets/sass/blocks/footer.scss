@@ -129,6 +129,46 @@
 }
 
 .footer__section {
+    position: relative;
+    z-index: 1;
+
+    &:after, &:before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        
+        width: 10px;
+        height: 2px;
+        background-color: $color3;
+        transition: transform 0.3s ease;
+
+        display: none;
+
+        @include media(768px) {
+            display: block;
+        }
+    }
+
+    &:after {
+        top: 8px;
+        right: 0;
+    }
+
+    &:before {
+        top: 8px;
+        right: 0;
+
+        transform: rotate(90deg);
+    }
+    
+    &.showed:before {
+        transform: rotate(40deg);
+    }
+
+    &.showed:after {
+        transform: rotate(140deg);
+    }
+
     &:nth-child(1) {
         @media (min-width: 769px) and (max-width: 1024px) {
             margin-right: 138px;
@@ -160,7 +200,14 @@
     }
 
     @include media(768px) {
-        margin-bottom: 50px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        max-width: 200px;
+        width: 100%;
+
+        transition: max-height 0.5s ease;
+        user-select: none;
+        cursor: pointer;
     }
 
     &:last-child {
